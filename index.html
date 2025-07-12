@@ -1,91 +1,111 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
-<meta charset="UTF-8" />
-<title>Kiosk Dashboard Einheitlich</title>
-<style>
-  html, body {
-    margin: 0; padding: 0; height: 100%; width: 100%;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: #2c3e50; /* dunkles Blau-Grau */
-    overflow: hidden;
-  }
-  .container {
-    display: flex;
-    height: 100vh;
-    width: 100vw;
-    gap: 15px;
-    padding: 15px;
-    box-sizing: border-box;
-  }
-  .column {
-    flex: 1;
-    background: #34495e; /* etwas helleres Dunkelblau */
-    border-radius: 15px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.6);
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-    border: 2px solid #2980b9; /* Akzentfarbe Blau */
-  }
-  .title {
-    background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
-    color: white;
-    font-weight: 700;
-    text-align: center;
-    padding: 16px;
-    font-size: 1.3rem;
-    user-select: none;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
-    flex-shrink: 0;
-  }
-  iframe {
-    flex: 1;
-    border: none;
-    width: 100%;
-    height: 100%;
-    background: #2c3e50; /* falls iframe transparent unterstützt */
-    border-radius: 0 0 15px 15px;
-  }
-  /* Wetter Widget */
-  #weather-widget {
-    flex: 1;
-    background: linear-gradient(135deg, #2980b9 0%, #3498db 100%);
-    color: #ecf0f1;
-    padding: 25px 15px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    justify-content: center;
-    gap: 10px;
-    border-radius: 0 0 15px 15px;
-  }
-  #weather-widget h2 {
-    margin: 0;
-    font-weight: 800;
-    font-size: 1.8rem;
-  }
-  #weather-icon {
-    width: 120px;
-    height: 120px;
-  }
-  #temperature {
-    font-size: 3.5rem;
-    font-weight: 900;
-    line-height: 1;
-  }
-  #weather-desc {
-    font-size: 1.4rem;
-    text-transform: capitalize;
-    font-weight: 600;
-  }
-  #humidity {
-    font-size: 1.1rem;
-    opacity: 0.85;
-  }
-</style>
+  <meta charset="UTF-8" />
+  <title>Kiosk Dashboard Einheitlich</title>
+  <style>
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      width: 100%;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #2c3e50;
+      /* dunkles Blau-Grau */
+      overflow: hidden;
+    }
+
+    .container {
+      display: flex;
+      height: 100vh;
+      width: 100vw;
+      gap: 15px;
+      padding: 15px;
+      box-sizing: border-box;
+    }
+
+    .column {
+      flex: 1;
+      background: #34495e;
+      /* etwas helleres Dunkelblau */
+      border-radius: 15px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      border: 2px solid #2980b9;
+      /* Akzentfarbe Blau */
+    }
+
+    .title {
+      background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+      color: white;
+      font-weight: 700;
+      text-align: center;
+      padding: 16px;
+      font-size: 1.3rem;
+      user-select: none;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+      flex-shrink: 0;
+    }
+
+    iframe {
+      flex: 1;
+      border: none;
+      width: 100%;
+      height: 100%;
+      background: #2c3e50;
+      /* falls iframe transparent unterstützt */
+      border-radius: 0 0 15px 15px;
+    }
+
+    /* Wetter Widget */
+    #weather-widget {
+      flex: 1;
+      background: linear-gradient(135deg, #2980b9 0%, #3498db 100%);
+      color: #ecf0f1;
+      padding: 25px 15px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      justify-content: center;
+      gap: 10px;
+      border-radius: 0 0 15px 15px;
+    }
+
+    #weather-widget h2 {
+      margin: 0;
+      font-weight: 800;
+      font-size: 1.8rem;
+    }
+
+    #weather-icon {
+      width: 120px;
+      height: 120px;
+    }
+
+    #temperature {
+      font-size: 3.5rem;
+      font-weight: 900;
+      line-height: 1;
+    }
+
+    #weather-desc {
+      font-size: 1.4rem;
+      text-transform: capitalize;
+      font-weight: 600;
+    }
+
+    #humidity {
+      font-size: 1.1rem;
+      opacity: 0.85;
+    }
+  </style>
 </head>
+
 <body>
   <div class="container">
 
@@ -97,19 +117,31 @@
 
     <!-- Wetter Widget -->
     <div class="column">
-<div style="position:relative;width:1425px;height:1202px;overflow:auto;">
-<iframe src="https://www.wetteronline.de/wetterradar/petershausen?wrg=09704&wrm=8.7&wrn=Petershausen&wrx=48.30,12.53&wry=44.41,11.40&wrf=true" height="100%" width="100%">
-</iframe>
-</div>
+      <div class="title">☀️ Wetter</div>
+      <div style="position:relative;width:1425px;height:45%;overflow:auto;">
+        <iframe
+          src="https://www.wetteronline.de/wetterradar/petershausen?wrg=09704&wrm=8.7&wrn=Petershausen&wrx=48.30,12.53&wry=44.41,11.40&wrf=true"
+          height="100%" width="100%">
+        </iframe>
+      </div>
+      <iframe style='border:1px solid;border-radius:10px;border-color:transparent;'
+        src='https://api.wetteronline.de/wetterwidget?gid=09704&modeid=FC3&seourl=petershausen&locationname=Petershausen&lang=de'></iframe>
     </div>
 
-<!-- WetterOnline Widget -->
-<div class="column">
-  <div class="title">☀️ Wetter Petershausen (WetterOnline)</div>
- <iframe style='border:1px solid;border-radius:10px;border-color:transparent;' src='https://api.wetteronline.de/wetterwidget?gid=09704&modeid=FC3&seourl=petershausen&locationname=Petershausen&lang=de'></iframe>
-</div>
+    <!-- Flight Radar Widget -->
+    <div class="column">
+      <div class="title">✈️ Flugverkehr (Flightradar24)</div>
+      <iframe 
+        src="https://www.flightradar24.com/simple?lat=48.4081&lon=11.4651&z=11"
+        width="100%" 
+        height="100%" 
+        allowfullscreen>
+      </iframe>
+    </div>
+    
 
   </div>
 
 </body>
+
 </html>
