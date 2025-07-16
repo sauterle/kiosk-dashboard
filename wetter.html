@@ -2,7 +2,7 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8">
-  <title>Wetter</title>
+  <title>WetterRadar</title>
   <style>
     html, body {
       margin: 0;
@@ -25,18 +25,8 @@
       flex-shrink: 0;
     }
 
-    .content {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-    }
-
     .radar {
-      flex: 63;
-    }
-
-    .widget {
-      flex: 37;
+      flex: 1;
     }
 
     iframe {
@@ -68,18 +58,10 @@
     <span id="clock">🕒</span>
   </div>
 
-  <div class="content">
-    <div class="radar">
-      <iframe
-        src="https://www.wetteronline.de/wetterradar/petershausen?wrg=09704&wrn=Petershausen&wrx=48.30,11.53&wry=44.41,11.40&wrf=true&wrm=8.7">
-      </iframe>
-    </div>
-
-    <div class="widget">
-      <iframe
-        src="https://api.wetteronline.de/wetterwidget?gid=09704&modeid=FC3&seourl=petershausen&locationname=Petershausen&lang=de">
-      </iframe>
-    </div>
+  <div class="radar">
+    <iframe
+      src="https://www.wetteronline.de/wetterradar/petershausen?wrg=09704&wrn=Petershausen&wrx=48.30,11.53&wry=44.41,11.40&wrf=true&wrm=9">
+    </iframe>
   </div>
 
   <script>
@@ -90,7 +72,6 @@
     setInterval(updateClock, 1000);
     updateClock();
 
-    // Automatischer Rücksprung nach 60 Sekunden Inaktivität
     let timeout;
     function resetTimer() {
       clearTimeout(timeout);
