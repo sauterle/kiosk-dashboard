@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Flugverkehr</title>
+  <style>
+    body {
+      margin: 0; background: #2c3e50; color: white; font-family: sans-serif;
+    }
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #2980b9;
+      padding: 10px 20px;
+      font-size: 1.2rem;
+    }
+    iframe {
+      width: 100%;
+      height: calc(100vh - 50px);
+      border: none;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="topbar">
+    <button onclick="window.location.href='index.html'" style="font-size: 1rem;">🔙 Zurück</button>
+    <span id="clock">🕒</span>
+  </div>
+
+  <iframe src="https://www.flightradar24.com/simple?lat=48.4081&lon=11.4651&z=10" allowfullscreen></iframe>
+
+  <script>
+    function updateClock() {
+      const now = new Date();
+      document.getElementById('clock').textContent = now.toLocaleTimeString('de-DE');
+    }
+    setInterval(updateClock, 1000);
+    updateClock();
+
+    let timeout;
+    function resetTimer() {
+      clearTimeout(timeout);
+      timeout = setTimeout(() => {
+        window.location.href = "index.html";
+      }, 60000);
+    }
+
+    document.onmousemove = resetTimer;
+    document.onkeydown = resetTimer;
+    document.ontouchstart = resetTimer;
+    resetTimer();
+  </script>
+
+</body>
+</html>
