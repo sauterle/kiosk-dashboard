@@ -13,7 +13,6 @@
       width: 100%;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background: #2c3e50;
-      /* dunkles Blau-Grau */
       overflow: hidden;
     }
 
@@ -29,14 +28,18 @@
     .column {
       flex: 1;
       background: #34495e;
-      /* etwas helleres Dunkelblau */
       border-radius: 15px;
       box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
       display: flex;
       flex-direction: column;
       overflow: hidden;
       border: 2px solid #2980b9;
-      /* Akzentfarbe Blau */
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+
+    .column:hover {
+      transform: scale(1.01);
     }
 
     .title {
@@ -57,11 +60,10 @@
       width: 100%;
       height: 100%;
       background: #2c3e50;
-      /* falls iframe transparent unterstützt */
       border-radius: 0 0 15px 15px;
+      pointer-events: none; /* verhindert Klicks auf iframe */
     }
 
-    /* Wetter Widget */
     #weather-widget {
       flex: 1;
       background: linear-gradient(135deg, #2980b9 0%, #3498db 100%);
@@ -110,13 +112,13 @@
   <div class="container">
 
     <!-- DB Abfahrten -->
-    <div class="column">
+    <div class="column" onclick="window.open('https://dbf.finalrewind.org/Petershausen%28Obb%29?typ=ab&zeilen=7', '_blank')">
       <div class="title">🚆 Abfahrten Petershausen</div>
       <iframe src="https://dbf.finalrewind.org/Petershausen%28Obb%29?typ=ab&zeilen=7" title="DB Abfahrten"></iframe>
     </div>
 
     <!-- Wetter Widget -->
-    <div class="column">
+    <div class="column" onclick="window.open('https://www.wetteronline.de/wetterradar/petershausen?wrg=09704&wrn=Petershausen&wrx=48.13,11.42&wry=48.41,11.47&wrf=true&wrm=9', '_blank')">
       <div class="title">☀️ Wetter</div>
       <div style="position:relative;width:1425px;height:45%;overflow:auto;">
         <iframe
@@ -124,12 +126,12 @@
           height="100%" width="100%">
         </iframe>
       </div>
-      <iframe style='border:1px solid;border-radius:10px;border-color:transparent;'
+      <iframe style='border:1px solid;border-radius:10px;border-color:transparent; pointer-events: none;'
         src='https://api.wetteronline.de/wetterwidget?gid=09704&modeid=FC3&seourl=petershausen&locationname=Petershausen&lang=de'></iframe>
     </div>
 
     <!-- Flight Radar Widget -->
-    <div class="column">
+    <div class="column" onclick="window.open('https://www.flightradar24.com/simple?lat=48.4081&lon=11.4651&z=10', '_blank')">
       <div class="title">✈️ Flugverkehr</div>
       <iframe 
         src="https://www.flightradar24.com/simple?lat=48.4081&lon=11.4651&z=10"
@@ -138,10 +140,8 @@
         allowfullscreen>
       </iframe>
     </div>
-    
 
   </div>
-
 </body>
 
 </html>
