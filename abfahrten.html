@@ -31,29 +31,6 @@
 
   <iframe src="https://dbf.finalrewind.org/Petershausen%28Obb%29?typ=ab&zeilen=10"></iframe>
 
-  <script>
-    // Uhr aktualisieren
-    function updateClock() {
-      const now = new Date();
-      document.getElementById('clock').textContent = now.toLocaleTimeString('de-DE');
-    }
-    setInterval(updateClock, 1000);
-    updateClock();
-
-    // Inaktivität -> Zurück zur Startseite
-    let timeout;
-    function resetTimer() {
-      clearTimeout(timeout);
-      timeout = setTimeout(() => {
-        window.location.href = "index.html";
-      }, 60000);
-    }
-
-    document.onmousemove = resetTimer;
-    document.onkeydown = resetTimer;
-    document.ontouchstart = resetTimer;
-    resetTimer();
-  </script>
 
 </body>
 </html>
