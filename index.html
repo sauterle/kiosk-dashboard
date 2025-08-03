@@ -81,27 +81,25 @@
     </div>
 
     <!-- Wetter Vorschau (Radar + Widget) -->
-    <div class="tile" onclick="location.href='wetter.html'">
+    <div class="tile" onclick="location.href='wetter-radar.html'">
       <div class="title">☀️ Wetter</div>
       <div class="preview">
-        <div class="weather-card">
+        <div class="full-iframe">
           <iframe
             src="https://www.wetteronline.de/wetterradar/petershausen?wrg=09704&wrn=Petershausen&wrx=48.30,11.53&wry=44.41,11.40&wrf=true&wrm=9">
           </iframe>
         </div>
-        <div class="weather-forecast">
-          <iframe
-            src="https://api.wetteronline.de/wetterwidget?gid=09704&modeid=FC3&seourl=petershausen&locationname=Petershausen&lang=de">
-          </iframe>
-        </div>
+
       </div>
     </div>
 
     <!-- Flugverkehr Vorschau (volle Höhe) -->
-    <div class="tile" onclick="location.href='flugverkehr.html'">
-      <div class="title">✈️ Flugverkehr</div>
+    <div class="tile" onclick="location.href='wetter-forecast.html'">
+      <div class="title">☀ Wettervorschau </div>
       <div class="full-iframe">
-        <iframe src="https://www.flightradar24.com/simple?lat=48.4081&lon=11.4651&z=10"></iframe>
+        <iframe
+                src="https://api.wetteronline.de/wetterwidget?gid=09704&modeid=FC3&seourl=petershausen&locationname=Petershausen&lang=de">
+        </iframe>
       </div>
     </div>
 
