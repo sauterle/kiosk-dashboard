@@ -60,12 +60,12 @@
       pointer-events: none;
     }
 
-    .wetter-karte {
-      flex: 2;
+    .weather-card {
+      flex: 25;
     }
 
-    .wetter-vorschau {
-      flex: 1;
+    .weather-forecast {
+      flex: 20;
     }
   </style>
 </head>
@@ -84,12 +84,12 @@
     <div class="tile" onclick="location.href='wetter.html'">
       <div class="title">☀️ Wetter</div>
       <div class="preview">
-        <div class="wetter-karte">
+        <div class="weather-card">
           <iframe
             src="https://www.wetteronline.de/wetterradar/petershausen?wrg=09704&wrn=Petershausen&wrx=48.30,11.53&wry=44.41,11.40&wrf=true&wrm=9">
           </iframe>
         </div>
-        <div class="wetter-vorschau">
+        <div class="weather-forecast">
           <iframe
             src="https://api.wetteronline.de/wetterwidget?gid=09704&modeid=FC3&seourl=petershausen&locationname=Petershausen&lang=de">
           </iframe>
